@@ -1,0 +1,147 @@
+swagger: '2.0'
+info:
+  description: The document of CNPM REST APIs
+  version: 1.0.0
+  title: CNPM REST APIs
+  contact:
+    name: Nguyen Ba Trung
+    url: 'https://swagger.io/specification/v2/'
+    email: nguyenbatrungnbt2000@gmail.com
+  license:
+    name: Apache 2.0
+    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+host: 'localhost:8080'
+basePath: /miniblogs
+
+paths:
+  "/accounts":
+    post:
+      tags:
+        - Account
+      operationId: postAccount
+      consumes: [ ]
+      parameters:
+        - in: body
+          name: request
+          description: request
+          required: true
+          schema:
+            $ref: '#/definitions/AccountReq'
+      responses:
+        200:
+          $ref: '#/responses/AccountRes'
+        401:
+          $ref: '#/responses/NoAuthorized'
+        403:
+          $ref: '#/responses/Forbidden'
+        404:
+          $ref: '#/responses/NotFound'
+  "/roles":
+    post:
+      tags:
+        - Role
+      operationId: postRole
+      consumes: [ ]
+      parameters:
+        - in: body
+          name: request
+          description: request
+          required: true
+          schema:
+            $ref: '#/definitions/RoleReq'
+      responses:
+        200:
+          $ref: '#/responses/RoleRes'
+        401:
+          $ref: '#/responses/NoAuthorized'
+        403:
+          $ref: '#/responses/Forbidden'
+        404:
+          $ref: '#/responses/NotFound'
+definitions:
+  AccountReq:
+    type: object
+    properties:
+      username:
+        type: string
+      password:
+        type: string
+      name:
+        type: string
+      roleIds:
+        items:
+          format: int64
+          type: integer
+        type: array
+
+  AccountRes:
+    type: object
+    properties:
+      id:
+        format: int64
+        type: integer
+      username:
+        type: string
+      password:
+        type: string
+      name:
+        type: string
+      userRoles:
+        description: Roles of Account
+        items:
+          $ref: "#/definitions/RoleRes"
+        type: array
+      status:
+        type: boolean
+  RoleReq:
+    type: object
+    properties:
+      name:
+        type: string
+      description:
+        type: string
+  RoleRes:
+    type: object
+    properties:
+      id:
+        format: int64
+        type: integer
+      name:
+        type: string
+      description:
+        type: string
+responses:
+  AccountReq:
+    description : 'Account request '
+    schema :
+      $ref : '#/definitions/AccountReq'
+  AccountRes:
+    description : 'Account responses '
+    schema :
+      $ref : '#/definitions/AccountRes'
+  RoleReq:
+    description : 'Role request '
+    schema :
+      $ref : '#/definitions/RoleReq'
+  RoleRes:
+    description : 'Role responses '
+    schema :
+      $ref : '#/definitions/RoleRes'
+  OK:
+    description: '200: OK'
+  Created:
+    description: '201: Created'
+  Accepted:
+    description: '202: Accepted'
+  NoContent:
+    description: '204: NoContent'
+  BadRequest:
+    description: '400: Bad Request'
+  NoAuthorized:
+    description: '401: No Authorized'
+  Forbidden:
+    description: '403: Forbidden'
+  NotFound:
+    description: '404: Not Found'
+  InternalServerError:
+    description: '500: Internal Server Error'

@@ -29,7 +29,7 @@ import static org.springframework.http.HttpHeaders.AUTHORIZATION;
 import static org.springframework.http.HttpStatus.FORBIDDEN;
 
 @RestController
-@CrossOrigin
+@CrossOrigin (origins = "http://localhost:3000")
 @RequestMapping("/huce")
 @RequiredArgsConstructor
 public class RoleController {

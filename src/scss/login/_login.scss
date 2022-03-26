@@ -1,0 +1,72 @@
+.login {
+	&__header {
+		background: var(--primary-color);
+		width: 100%;
+		margin-bottom: 60px;
+		text-align: center;
+		border-bottom: 1px solid var(--primary-color-sider);
+		padding: 10px;
+	}
+	&__logo {
+		width: 150px;
+		height: 60px;
+		padding: 5px 0;
+	}
+	&-form {
+		width: 480px;
+		position: relative;
+		padding: 40px;
+		border: 1px solid var(--primary-color-sider);
+		margin: auto;
+		background: white;
+		z-index: 1;
+	}
+	&__remember-and-forgot {
+		display: flex;
+		justify-content: space-between;
+	}
+	.login-form-button {
+		background: var(--primary-color);
+		float: right;
+		border: 1px solid var(--primary-color-sider);
+		color: #000;
+		&:hover {
+			background: var(--primary-color-menu);
+		}
+	}
+	.ant-progress-outer {
+		line-height: 0;
+	}
+	.ant-progress-line {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		line-height: 0;
+		animation: leftToRight 0.3s ease-in;
+	}
+	.ant-progress-bg {
+		height: 3px !important;
+	}
+	.ant-progress {
+		display: none;
+	}
+}
+
+@keyframes leftToRight {
+	0% {
+		left: -100%;
+	}
+	100% {
+		left: 0;
+	}
+}
+
+@media (min-width: 238px) and (max-width: 490px) {
+	.login {
+		&-form {
+			width: 100%;
+			padding: 20px;
+		}
+	}
+}

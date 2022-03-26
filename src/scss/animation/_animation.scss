@@ -1,0 +1,154 @@
+.login {
+    position: relative;
+    height: 100vh;
+}
+
+.effect {
+    &-horizontal {
+        position: absolute;
+        width: 180px;
+        top: 20%;
+        left: 2%;
+        display: flex;
+        flex-wrap: wrap;
+        animation: leftRight 10s infinite;
+    }
+    &-vertical {
+        position: absolute;
+        width: 100px;
+        bottom: 0;
+        right: 5%;
+        display: flex;
+        flex-wrap: wrap;
+        animation: upDown 10s infinite;
+    }
+    &__square {
+        padding: 5px;
+        margin: 10px;
+        background-color: #e6ebf2;
+    }
+    &__circle-left {
+        position: absolute;
+        top: 5%;
+        width: 300px;
+        height: 300px;
+        background-color: #f5f7fa;
+        clip-path: circle(300px at 0 0);
+        z-index: -1;
+    }
+    &__circle-right {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 300px;
+        height: 300px;
+        background-color: #f5f7fa;
+        clip-path: circle(300px at 0 0);
+        transform: rotate(180deg);
+        z-index: -1;
+    }
+}
+
+@keyframes upDown {
+    0% {
+        bottom: 0px;
+    }
+    50% {
+        bottom: 30%;
+        color: #676970;
+    }
+    100% {
+        bottom: 0px;
+    }
+}
+
+@-moz-keyframes upDown {
+    0% {
+        bottom: 0px;
+    }
+    50% {
+        bottom: 30%;
+        color: #676970;
+    }
+    100% {
+        bottom: 0px;
+    }
+}
+
+@-webkit-keyframes upDown {
+    0% {
+        bottom: 0px;
+    }
+    50% {
+        bottom: 30%;
+        color: #676970;
+    }
+    100% {
+        bottom: 0px;
+    }
+}
+
+@-o-keyframes upDown {
+    0% {
+        bottom: 0px;
+    }
+    50% {
+        bottom: 30%;
+        color: #676970;
+    }
+    100% {
+        bottom: 0px;
+    }
+}
+
+@keyframes leftRight {
+    0% {
+        left: 0px;
+    }
+    50% {
+        left: 10%;
+        color: #676970;
+    }
+    100% {
+        left: 0px;
+    }
+}
+
+@-moz-keyframes leftRight {
+    0% {
+        left: 0px;
+    }
+    50% {
+        left: 10%;
+        color: #676970;
+    }
+    100% {
+        left: 0px;
+    }
+}
+
+@-webkit-keyframes leftRight {
+    0% {
+        left: 0px;
+    }
+    50% {
+        left: 10%;
+        color: #676970;
+    }
+    100% {
+        left: 0px;
+    }
+}
+
+@-o-keyframes leftRight {
+    0% {
+        left: 0px;
+    }
+    50% {
+        left: 10%;
+        color: #676970;
+    }
+    100% {
+        left: 0px;
+    }
+}
